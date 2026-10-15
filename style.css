@@ -1,0 +1,379 @@
+
+/* ========================================
+   GRACES DIGITAL — CARTÃO RESPONSIVO
+   Identidade visual: preto + azul
+======================================== */
+
+/* Variáveis globais */
+:root {
+    --bg: #080a10;
+    --card: #10141e;
+    --blue: #2583ff;
+    --bright: #42a5ff;
+    --text: #f5f7fb;
+    --muted: #a3adbf;
+    --border: rgba(88, 153, 255, 0.24);
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* Configurações gerais da página */
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 15% 12%,
+            rgba(37, 131, 255, 0.15),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(37, 131, 255, 0.10),
+            transparent 28%
+        ),
+        var(--bg);
+
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* Área principal */
+.page-shell {
+    width: 100%;
+    max-width: 430px;
+}
+
+/* Cartão digital */
+.business-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding: 38px 26px 26px;
+
+    border: 1px solid var(--border);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(26, 36, 55, 0.96),
+            rgba(10, 13, 21, 0.98) 58%
+        ),
+        var(--card);
+
+    box-shadow:
+        0 26px 80px rgba(0, 0, 0, 0.53),
+        0 0 42px rgba(37, 131, 255, 0.10);
+
+    text-align: center;
+}
+
+/* Brilho azul no topo do cartão */
+.business-card::before {
+    position: absolute;
+    z-index: -1;
+    top: -140px;
+    left: 50%;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+    background: rgba(37, 131, 255, 0.15);
+    filter: blur(50px);
+
+    content: "";
+    transform: translateX(-50%);
+}
+
+/* Foto de perfil */
+.profile-wrap {
+    position: relative;
+
+    width: 124px;
+    height: 124px;
+    margin: 0 auto 22px;
+    padding: 5px;
+
+    border: 2px solid var(--bright);
+    border-radius: 50%;
+
+    background: rgba(37, 131, 255, 0.12);
+
+    box-shadow:
+        0 0 0 7px rgba(37, 131, 255, 0.07),
+        0 0 32px rgba(37, 131, 255, 0.30);
+}
+
+.profile-photo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    background: #202a3a;
+}
+
+/* Indicador de status */
+.status-dot {
+    position: absolute;
+    right: 5px;
+    bottom: 7px;
+
+    width: 16px;
+    height: 16px;
+
+    border: 3px solid var(--card);
+    border-radius: 50%;
+
+    background: #38d996;
+}
+
+/* Texto superior */
+.eyebrow {
+    margin: 0 0 10px;
+
+    color: var(--bright);
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+}
+
+/* Nome */
+h1 {
+    margin: 0;
+
+    font-size: clamp(29px, 7vw, 36px);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+}
+
+h1 span {
+    color: var(--bright);
+}
+
+/* Profissão */
+.profession {
+    margin: 8px 0 0;
+
+    color: #dce7f8;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Descrição */
+.intro {
+    max-width: 280px;
+    margin: 12px auto 25px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Lista de links */
+.link-list {
+    display: grid;
+    gap: 11px;
+
+    text-align: left;
+}
+
+/* Botões */
+.link-button {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-height: 68px;
+    padding: 11px 14px;
+
+    border: 1px solid rgba(155, 180, 220, 0.13);
+    border-radius: 15px;
+
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.035);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+/* Efeito ao passar o mouse ou focar */
+.link-button:hover,
+.link-button:focus-visible {
+    border-color: rgba(66, 165, 255, 0.65);
+    background: rgba(37, 131, 255, 0.10);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Botão de destaque */
+.link-button.primary {
+    border-color: rgba(66, 165, 255, 0.55);
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(37, 131, 255, 0.23),
+            rgba(37, 131, 255, 0.06)
+        );
+}
+
+/* Área dos ícones */
+.icon-box {
+    display: grid;
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    color: var(--bright);
+    background: rgba(37, 131, 255, 0.13);
+}
+
+/* Ícones SVG */
+.icon-box svg,
+.arrow {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Cor do Instagram */
+.icon-box.instagram {
+    color: #ff79bd;
+    background: rgba(225, 64, 150, 0.12);
+}
+
+/* Cor do WhatsApp */
+.icon-box.whatsapp {
+    color: #46e29b;
+    background: rgba(70, 226, 155, 0.11);
+}
+
+/* Textos dos botões */
+.link-copy {
+    display: grid;
+    flex: 1;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.link-copy strong {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.link-copy small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* Seta dos botões */
+.arrow {
+    width: 18px;
+    height: 18px;
+
+    color: #8192ad;
+}
+
+/* Rodapé interno */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 27px;
+
+    color: #8493ab;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.card-footer span {
+    width: 24px;
+    height: 1px;
+
+    background: rgba(66, 165, 255, 0.5);
+}
+
+/* Texto abaixo do cartão */
+.outside-note {
+    margin: 17px 0 0;
+
+    color: #657189;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+
+    text-align: center;
+}
+
+.outside-note b {
+    color: var(--bright);
+}
+
+/* Responsividade para celulares menores */
+@media (max-width: 380px) {
+    .business-card {
+        padding: 30px 18px 22px;
+        border-radius: 23px;
+    }
+
+    .profile-wrap {
+        width: 110px;
+        height: 110px;
+    }
+
+    .link-button {
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
